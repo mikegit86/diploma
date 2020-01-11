@@ -1,5 +1,7 @@
 package ru.mike.diploma.web;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,16 +16,19 @@ import java.net.URI;
 @RequestMapping(AdminUserController.URL)
 public class AdminUserController {
     static final  String URL = "/admin/user";
+    final static Logger LOG = LoggerFactory.getLogger(AdminUserController.class);
     @Autowired
     UserService userService;
     @GetMapping(value = "/get/{Id}")
     public User getUser(@PathVariable ("Id") int Id){
+        LOG.info("id user ={}", Id);
        return userService.getbyID(Id).get();
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User>  add (@RequestBody User user){
     User addUser =    userService.add(user);
+    LOG.info("User {}",addUser);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(URL + "/{id}")
                 .buildAndExpand(addUser.getId()).toUri();

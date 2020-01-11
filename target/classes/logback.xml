@@ -19,7 +19,8 @@
         </encoder>
     </appender>
     <logger name="org.springframework.data.jpa" level="info" additivity="false"> <appender-ref ref="console"/></logger>
-    <logger name="org.springframework.security" level="info"/>
+    <logger name="org.springframework" level="info"/>
+    <logger name="ru.mike.diploma" level="debug" additivity="false">   <appender-ref ref="console"/> </logger>
 
 
     <root level="info">
