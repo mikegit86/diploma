@@ -20,11 +20,11 @@ public class Main {
 
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("springconf.xml");
-        //UserService userServiceImpl =  (UserService)  applicationContext.getBean("userServiceImpl");
-       VoteService voteService =  (  VoteService)  applicationContext.getBean("voteServiceImpl");
+        RestaurantService restaurantService  =  (RestaurantService)  applicationContext.getBean("restaurantServiceImpl");
+       //VoteService voteService =  (  VoteService)  applicationContext.getBean("voteServiceImpl");
       // voteService.save(new Vote(LocalDate.now(),new Restaurant("PhoboUp",6),new User("patrik",5,"patrik33GAV@mail.ru", Role.USER,"kdfjf")));
         //System.out.println(voteService.getAllByLocalDate(LocalDate.of(2019,12,22)));
-       System.out.println(voteService.getAllByUserIdAndLocalDate(3,LocalDate.now()));
+      // System.out.println(voteService.getAllByUserIdAndLocalDate(3,LocalDate.now()));
         //System.out.println(voteService.getAllByRestaurantIdAndLocalDate(2,LocalDate.of(2019,12,22)));
        // voteService.delete(1);
 
@@ -33,7 +33,7 @@ public class Main {
        //Restaurant restaurant = new Restaurant("PhoboUp",6);
 
 //userServiceImpl.add(new User("patrik",5,"patrikGAV@mail.ru", Role.USER,"kdfjf"));
-       // System.out.println(restaurantService.getRestaurantwithTodayMenu(3).getMenuList());
+       System.out.println(restaurantService.getAllwithTodayMenu(LocalDate.now()));
         //System.out.println(restaurantService.getAllwithTodayMenu(LocalDate.now()));
        // System.out.println(restaurantService.getRestaurantbyID(4).orElse(null));
 

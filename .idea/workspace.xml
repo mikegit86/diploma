@@ -6,7 +6,47 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a0acef-73d7-4ddd-bc55-859cd6c373d4" name="Default Changelist" comment="" />
+    <list default="true" id="e5a0acef-73d7-4ddd-bc55-859cd6c373d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminRestaurantController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminUserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminRestaurantController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/web/AdminUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logdiploma.log" beforeDir="false" afterPath="$PROJECT_DIR$/logdiploma.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/model/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/RestaurantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/repository/RestaurantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/RestaurantServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminRestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminRestaurantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/ProfileVoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/ProfileVoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/AbstractServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/mike/diploma/service/AbstractServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/model/Restaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/repository/RestaurantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/persistence/repository/RestaurantRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/services/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/ProfileVoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/ProfileVoteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/model/Restaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/repository/RestaurantRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/persistence/repository/RestaurantRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/RestaurantServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/diploma/WEB-INF/classes/ru/mike/diploma/services/UserServiceImpl.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +93,14 @@
       <list>
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
-        <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -75,8 +118,10 @@
     </option>
   </component>
   <component name="ProjectId" id="1Tv38zhnZTTfyJgCYJBT5abt2iC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -125,7 +170,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.22">
+  <component name="RunManager" selected="JUnit.RestaurantServiceTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.mike.diploma.Main" />
       <module name="diploma" />
@@ -284,10 +329,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.RestaurantServiceTest" />
         <item itemvalue="JUnit.MenuServiceTest" />
         <item itemvalue="JUnit.MenuServiceTest.getById" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.RestaurantServiceTest.getRestaurantbyID" />
       </list>
     </recent_temporary>
@@ -300,16 +345,6 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5a31e326" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5a31e326" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@32ee7b56" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5a31e326" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1a3a8ef" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -329,12 +364,23 @@
       <updated>1574326586060</updated>
       <workItem from="1574326590721" duration="37487000" />
       <workItem from="1575551011692" duration="591000" />
-      <workItem from="1575620766806" duration="265220000" />
+      <workItem from="1575620766806" duration="292744000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -348,11 +394,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/ru/mike/diploma/persistence/Hibernate/MenuJPAHibernateImpl.java</url>
           <line>88</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/ProfileVoteController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

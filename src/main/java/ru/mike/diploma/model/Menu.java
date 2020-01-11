@@ -1,5 +1,6 @@
 package ru.mike.diploma.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cascade;
@@ -21,6 +22,7 @@ public class Menu extends AbstractNamedEntity  {
 
   // @OnDelete(action = OnDeleteAction.CASCADE)
   //  @JsonIgnore
+    @JsonBackReference
    private  Restaurant restaurant;
     @Column(name = "datemenu")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)

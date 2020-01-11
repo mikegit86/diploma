@@ -4,12 +4,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import ru.mike.diploma.model.Restaurant;
+import ru.mike.diploma.model.Vote;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public interface RestaurantRepository extends JpaRepository<Restaurant,Integer> {
     List<Restaurant> findAll();
+
     //@Query("DELETE FROM Restaurant r WHERE r.id=:id")
     //void delete(@Param("id")int restID);
     //void delete(int restID);

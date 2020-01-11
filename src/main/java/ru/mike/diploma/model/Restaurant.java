@@ -1,5 +1,9 @@
 package ru.mike.diploma.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
@@ -10,7 +14,9 @@ import java.util.List;
 
 public class Restaurant extends AbstractNamedEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    @JsonManagedReference
  private List<Menu> menuList;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
  private List<Vote> votes;
 
@@ -56,7 +62,7 @@ public class Restaurant extends AbstractNamedEntity {
 
     @Override
     public String toString() {
-        return "Restaurant{" +
+        return "Restaurant{" + menuList+votes+
 
 
                 ", name='" + name + '\'' +

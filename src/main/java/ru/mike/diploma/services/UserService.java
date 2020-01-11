@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface UserService {
 
-    void add(User user);
+    User add(User user);
     void delete(int userID);
 
     Optional<User> getbyID(int userID);

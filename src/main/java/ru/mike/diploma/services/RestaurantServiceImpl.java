@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.mike.diploma.model.Menu;
 import ru.mike.diploma.model.Restaurant;
+import ru.mike.diploma.model.Vote;
 import ru.mike.diploma.persistence.repository.MenuRepository;
 import ru.mike.diploma.persistence.repository.RestaurantRepository;
 
@@ -23,6 +24,8 @@ public class RestaurantServiceImpl implements RestaurantService {
     RestaurantRepository restaurantRepository;
     @Autowired
     MenuRepository menuRepository;
+    @Autowired
+    VoteService voteService;
     @Override
     public Optional<Restaurant> getRestaurantbyID(int restID) {
         return restaurantRepository.findById(restID);
@@ -35,8 +38,8 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public void addRest(Restaurant restaurant) {
-        restaurantRepository.save(restaurant);
+    public Restaurant addRest(Restaurant restaurant) {
+       return restaurantRepository.save(restaurant);
 
     }
 
@@ -65,12 +68,16 @@ public class RestaurantServiceImpl implements RestaurantService {
     public List<Restaurant> getAllwithTodayMenu(LocalDate localDate) {
         List<Restaurant> allRest = getAllRestaurant();
         for (Restaurant rest:allRest) {
+            LOG.info("rest={}", rest);
             List<Menu>  menu=  menuRepository.getMenuByLocalDateAndRestaurantId(LocalDate.now(),rest.getId());
-
+            List<Vote> votes = voteService.getAllByRestaurantIdAndLocalDate(rest.getId(),LocalDate.now());
+            LOG.info("menu={}", menu);
             rest.setMenuList(menu);
+            rest.setVotes(votes);
             
         }
-
-        return allRest.stream().filter(x->!x.getMenuList().isEmpty()).collect(Collectors.toList());
+List<Restaurant> restTodayMenu = allRest.stream().filter(x->!x.getMenuList().isEmpty()).collect(Collectors.toList());
+        LOG.info("size={}",restTodayMenu.size());
+        return restTodayMenu;
     }
 }

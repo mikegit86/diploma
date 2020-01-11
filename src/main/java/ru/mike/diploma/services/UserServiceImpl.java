@@ -17,8 +17,8 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
   private   UserRepository userRepository;
-  public   void add(User user){
-        userRepository.save(user);
+  public  User add(User user){
+      return   userRepository.save(user);
     }
   public   void delete(int userID){
         userRepository.deleteById(userID);

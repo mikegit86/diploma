@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-@ContextConfiguration("classpath:springconf.xml")
+@ContextConfiguration("classpath:spring-test.xml")
 @RunWith(SpringRunner.class)
 @Sql(scripts = "classpath:populateDB.sql",  config = @SqlConfig(encoding = "UTF-8"))
 public class AbstractServiceTest {

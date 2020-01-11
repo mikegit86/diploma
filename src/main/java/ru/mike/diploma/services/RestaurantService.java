@@ -10,7 +10,7 @@ public interface RestaurantService {
 
    Optional< Restaurant> getRestaurantbyID(int restID);
     void delete(int restID);
-    void addRest(Restaurant restaurant);
+    Restaurant addRest(Restaurant restaurant);
     void updateRest(Restaurant restaurant);
     List<Restaurant> getAllRestaurant();
    Restaurant getRestaurantwithTodayMenu (int restID);

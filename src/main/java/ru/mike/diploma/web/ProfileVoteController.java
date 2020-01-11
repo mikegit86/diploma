@@ -36,21 +36,11 @@ public class ProfileVoteController {
 
     @GetMapping(value = GET_URL, produces =MediaType.APPLICATION_JSON_VALUE )
     public Vote getVote(@AuthenticationPrincipal AuthorizedUser authorizedUser){
-        log.info("enter in metod");
+
         log.info("user {} ", authorizedUser.getUserTo());
         return voteService.getAllByUserIdAndLocalDate(authorizedUser.getId(),LocalDate.now());
 
     }
-
-/*    @GetMapping(value = GET_URL, produces = MediaType.APPLICATION_JSON_VALUE)
-    public VoteTo get(@AuthenticationPrincipal AuthorizedUser authorizedUser){
-        log.info("get today vote by user {}", authorizedUser.getId());
-        return checkNotFoundWithId(asTo(service.getTodayByUserId(authorizedUser.getId())), authorizedUser.getId());
-    }*/
-
-
-
-
 
 
 
