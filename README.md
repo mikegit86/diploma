@@ -37,24 +37,27 @@ chak@mail.ru	a123321	ROLE_ADMIN;
 
 ============================================
 
-
-
 add new user
 curl -s -X POST -d ' { "name": "mikeNew", "email": "mike@yandex.ru", "role": "ROLE_ADMIN", "password": "123321" }' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/user --user chak@mail.ru:a123321
+
 get user
 curl -s http://localhost:8080/admin/user/get/1 --user chak@mail.ru:a123321
+
 get restaurant
 curl -s http://localhost:8080/admin/restaurant/get/1 --user chak@mail.ru:a123321
 
 add new restaturant
 curl -s -X POST -d ' { "name": "BurgerKing"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/restaurant --user chak@mail.ru:a123321
+
 get with todat menu 
 curl -s http://localhost:8080/admin/restaurant/getAllTodayMenu --user chak@mail.ru:a123321
 
 get vote all today
 curl -s http://localhost:8080/admin/vote/today/all --user chak@mail.ru:a123321
+
 get vote id
 curl -s http://localhost:8080/admin/vote/get/1 --user chak@mail.ru:a123321
+
 create new vote or edit vote
  curl -s -X POST -H  'Content-Type:application/json;charset=UTF-8' http://localhost:8080/api/profile/restaurants/1/votes --user mike@yandex.ru:a123321
 
