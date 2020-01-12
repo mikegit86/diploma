@@ -26,8 +26,9 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 ===
 DBs - MySQL(login - root, pass - root)
 
-credential=
-mike	mike@yandex.ru	a123321	ROLE_USER;
-dive	dive@yandex.ru	b123321	ROLE_USER;
-chak	chak@mail.ru	a123321	ROLE_ADMIN;
-mikeNew	mike@yandex.ru	123321	ROLE_ADMIN;
+credential
+=
+mike@yandex.ru	a123321	ROLE_USER;
+dive@yandex.ru	b123321	ROLE_USER;
+chak@mail.ru	a123321	ROLE_ADMIN;
+mike@yandex.ru	123321	ROLE_ADMIN;
