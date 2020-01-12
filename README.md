@@ -24,9 +24,9 @@ P.S.: Make sure everything works with latest version that is on github :)
 P.P.S.: Asume that your API will be used by a frontend developer to build frontend on top of that.
 
 ===
-DBs - MySQL
+DBs - MySQL(login - root, pass - root)
 
-credential
+credential=
 mike	mike@yandex.ru	a123321	ROLE_USER;
 dive	dive@yandex.ru	b123321	ROLE_USER;
 chak	chak@mail.ru	a123321	ROLE_ADMIN;
