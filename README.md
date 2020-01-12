@@ -23,13 +23,14 @@ P.S.: Make sure everything works with latest version that is on github :)
 
 P.P.S.: Asume that your API will be used by a frontend developer to build frontend on top of that.
 
-===
+
+
+credential
+=
 DBs - MySQL
 database - projectvoterestaurant
 (login - root, pass - root)
 
-credential
-=
 mike@yandex.ru	a123321	ROLE_USER;
 dive@yandex.ru	b123321	ROLE_USER;
 chak@mail.ru	a123321	ROLE_ADMIN;
