@@ -27,7 +27,7 @@ P.P.S.: Asume that your API will be used by a frontend developer to build fronte
 DBs - MySQL
 
 credential
-1	mike	mike@yandex.ru	a123321	ROLE_USER
-2	dive	dive@yandex.ru	b123321	ROLE_USER
-3	chak	chak@mail.ru	a123321	ROLE_ADMIN
-4	mikeNew	mike@yandex.ru	123321	ROLE_ADMIN
+mike	mike@yandex.ru	a123321	ROLE_USER;
+dive	dive@yandex.ru	b123321	ROLE_USER;
+chak	chak@mail.ru	a123321	ROLE_ADMIN;
+mikeNew	mike@yandex.ru	123321	ROLE_ADMIN;
