@@ -7,9 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5a0acef-73d7-4ddd-bc55-859cd6c373d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminRestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminRestaurantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logdiploma.log" beforeDir="false" afterPath="$PROJECT_DIR$/logdiploma.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mike/diploma/web/AdminUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminVoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/mike/diploma/web/AdminVoteController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -296,8 +298,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RestaurantServiceTest" />
         <item itemvalue="JUnit.MenuServiceTest" />
+        <item itemvalue="JUnit.RestaurantServiceTest" />
         <item itemvalue="JUnit.MenuServiceTest.getById" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.RestaurantServiceTest.getRestaurantbyID" />
@@ -331,7 +333,7 @@
       <updated>1574326586060</updated>
       <workItem from="1574326590721" duration="37487000" />
       <workItem from="1575551011692" duration="591000" />
-      <workItem from="1575620766806" duration="305982000" />
+      <workItem from="1575620766806" duration="307437000" />
     </task>
     <servers />
   </component>

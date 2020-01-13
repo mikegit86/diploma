@@ -27,12 +27,25 @@ public class AdminUserController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User>  add (@RequestBody User user){
-    User addUser =    userService.add(user);
-    LOG.info("User {}",addUser);
+        User addUser =    userService.add(user);
+
+        LOG.info("User {}",addUser);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(URL + "/{id}")
                 .buildAndExpand(addUser.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(addUser);
+    }
+
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User>  update (@RequestBody User user){
+        User updateUser =    userService.add(user);
+
+        LOG.info("User {}",updateUser);
+        URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path(URL + "/{id}")
+                .buildAndExpand(updateUser.getId()).toUri();
+        return ResponseEntity.created(uriOfNewResource).body(updateUser);
     }
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable ("id") int id){

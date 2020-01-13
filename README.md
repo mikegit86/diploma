@@ -79,3 +79,10 @@ curl -s -X DELETE http://localhost:8080/admin/user/delete/1 --user chak@mail.ru:
 
 delete vote id
 curl -s -X DELETE http://localhost:8080/admin/vote/1 --user chak@mail.ru:a123321
+
+update rest id
+curl -s -X PUT -d '  {"id":1,"name":"NewMacDonlUp"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/restaurant/update/1 --user chak@mail.ru:a123321
+
+update user id
+
+curl -s -X PUT -d '  {"id":1, "name": "mikeNew", "email": "mike@yandex.ru", "role": "ROLE_ADMIN", "password": "123321" }' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/user --user chak@mail.ru:a123321
