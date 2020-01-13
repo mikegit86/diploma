@@ -63,3 +63,9 @@ create new vote or edit vote
 
 get munu id
 curl -s http://localhost:8080/api/admin/restaurants/1/menus/1 --user mike@yandex.ru:a123321
+
+update menu id
+curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":"2019-08-16"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/api/admin/restaurants/1/menus/update --user chak@mail.ru:a123321
+
+delete menu id
+curl -s -X DELETE http://localhost:8080/api/admin/restaurants/1/menus/delete/2 --user chak@mail.ru:a123321
