@@ -55,34 +55,34 @@ curl -s http://localhost:8080/admin/restaurant/getAllTodayMenu --user chak@mail.
 get vote all today
 curl -s http://localhost:8080/admin/vote/today/all --user chak@mail.ru:a123321
 
-get vote id
+get vote 
 curl -s http://localhost:8080/admin/vote/get/1 --user chak@mail.ru:a123321
 
 create new vote or edit vote
  curl -s -X POST -H  'Content-Type:application/json;charset=UTF-8' http://localhost:8080/api/profile/restaurants/1/votes --user mike@yandex.ru:a123321
 
-get munu id
+get munu 
 curl -s http://localhost:8080/api/admin/restaurants/1/menus/1 --user mike@yandex.ru:a123321
 
-update menu id
+update menu 
 curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":"2019-08-16"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/api/admin/restaurants/1/menus/update --user chak@mail.ru:a123321
 
-delete menu id
+delete menu 
 curl -s -X DELETE http://localhost:8080/api/admin/restaurants/1/menus/delete/2 --user chak@mail.ru:a123321
 
 
-delete rest id
+delete rest 
 curl -s -X DELETE http://localhost:8080/admin/restaurant/delete/1 --user chak@mail.ru:a123321
 
-delete user id
+delete user 
 curl -s -X DELETE http://localhost:8080/admin/user/delete/1 --user chak@mail.ru:a123321
 
-delete vote id
+delete vote 
 curl -s -X DELETE http://localhost:8080/admin/vote/1 --user chak@mail.ru:a123321
 
-update rest id
+update rest 
 curl -s -X PUT -d '  {"id":1,"name":"NewMacDonlUp"}' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/restaurant/update/1 --user chak@mail.ru:a123321
 
-update user id
+update user 
 
 curl -s -X PUT -d '  {"id":1, "name": "mikeNew", "email": "mike@yandex.ru", "role": "ROLE_ADMIN", "password": "123321" }' -H 'Content-Type:application/json;charset=UTF-8' http://localhost:8080/admin/user --user chak@mail.ru:a123321
