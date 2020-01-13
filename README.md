@@ -69,3 +69,13 @@ curl -s -X PUT -d ' {"id":3,"name":"BigMacUPDATENEW!!!","price":444,"localDate":
 
 delete menu id
 curl -s -X DELETE http://localhost:8080/api/admin/restaurants/1/menus/delete/2 --user chak@mail.ru:a123321
+
+
+delete rest id
+curl -s -X DELETE http://localhost:8080/admin/restaurant/delete/1 --user chak@mail.ru:a123321
+
+delete user id
+curl -s -X DELETE http://localhost:8080/admin/user/delete/1 --user chak@mail.ru:a123321
+
+delete vote id
+curl -s -X DELETE http://localhost:8080/admin/vote/1 --user chak@mail.ru:a123321

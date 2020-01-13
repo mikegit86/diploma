@@ -24,6 +24,7 @@ public class AdminVoteController {
         return  voteService.getAllByLocalDate(LocalDate.now());
     }
     //@DeleteMapping(value ="/{id}" )
+
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void deleteVote(@PathVariable ("id") int id){

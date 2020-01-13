@@ -34,4 +34,9 @@ public class AdminUserController {
                 .buildAndExpand(addUser.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(addUser);
     }
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable ("id") int id){
+        userService.delete(id);
+    }
+
 }
