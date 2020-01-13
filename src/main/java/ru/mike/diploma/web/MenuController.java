@@ -42,11 +42,29 @@ public class MenuController {
      Menu creatMenu =   menuService.addMenu(menu, restId);
        // Menu creatMenu = menuService.getMenu(menu.getId());
         URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{dishId}")
+                .path("/{menuId}")
                 .buildAndExpand(creatMenu.getId()).toUri();
 
         return ResponseEntity.created(uriofNewResource).body(creatMenu);
 
 
     }
+    @DeleteMapping (value = "/delete/{id}")
+    public void delete(@PathVariable ("id") int id, @PathVariable ("restId") int restId){
+        menuService.deleteMenu(id,restId);
+    }
+
+    @PutMapping(value = "/update",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Menu> update(@PathVariable(name = "restId") int restId, @RequestBody Menu menu) {
+        Menu creatMenu =   menuService.addMenu(menu, restId);
+        // Menu creatMenu = menuService.getMenu(menu.getId());
+        URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{menuId}")
+                .buildAndExpand(creatMenu.getId()).toUri();
+
+        return ResponseEntity.created(uriofNewResource).body(creatMenu);
+
+
+    }
+
 }
