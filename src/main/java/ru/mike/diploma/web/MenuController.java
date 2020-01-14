@@ -25,7 +25,7 @@ public class MenuController {
 
     @GetMapping(value = "/{menuId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Menu get(@PathVariable(name = "menuId") int menuId,@PathVariable (name = "restId") int restId) {
-        log.info("menuId", menuId);
+        log.info("menuId = {}", menuId);
 
         return menuService.getMenu(menuId,restId);
     }

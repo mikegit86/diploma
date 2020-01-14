@@ -20,9 +20,9 @@
     </appender>
     <logger name="org.springframework.data.jpa" level="info" additivity="false"> <appender-ref ref="console"/></logger>
     <logger name="org.springframework" level="info"/>
-    <logger name="ru.mike.diploma" level="debug" additivity="false">   <appender-ref ref="console"/> </logger>
+   <!-- <logger name="ru.mike.diploma" level="debug" additivity="false">   <appender-ref ref="console"/> </logger>-->
     <logger name="ru.mike.diploma.web" level="debug"/>
-
+    <logger name="ru.mike.diploma" level="debug"/>
 
     <root level="info">
         <appender-ref ref="STDOUT" />
