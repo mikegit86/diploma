@@ -16,14 +16,12 @@ import java.util.TimeZone;
 public class MenuJPAJDBCTemplateImpl implements MenuJPA {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
     @Override
     public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) throws SQLException {
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
-      //return   jdbcTemplate.query("select * from  menu where id_rest = ? and datemenu = ? "
-             // ,new Object[] { restID,localDate },new MenuMapper());
-        return   jdbcTemplate.query("select * from  menu where id_rest = ? and datemenu = ? "
-                ,new Object[] { restID,localDate },new BeanPropertyRowMapper<>(Menu.class));
-
+        return jdbcTemplate.query("select * from  menu where id_rest = ? and datemenu = ? "
+                , new Object[]{restID, localDate}, new BeanPropertyRowMapper<>(Menu.class));
     }
 
     @Override
@@ -33,29 +31,28 @@ public class MenuJPAJDBCTemplateImpl implements MenuJPA {
 
     @Override
     public void deleteMenu(int menuID) {
-        jdbcTemplate.update("delete from menu where id=?",menuID);
+        jdbcTemplate.update("delete from menu where id=?", menuID);
 
     }
 
     @Override
     public void addMenu(Menu menu) throws Exception {
-        jdbcTemplate.update("insert into menu(name, price, datemenu, id_rest)  value (?,?,?,?)",menu.getName()
-                ,menu.getPrice(),menu.getLocalDate(),menu.getRestaurant().getId());
+        jdbcTemplate.update("insert into menu(name, price, datemenu, id_rest)  value (?,?,?,?)", menu.getName()
+                , menu.getPrice(), menu.getLocalDate(), menu.getRestaurant().getId());
 
     }
 
     @Override
     public List<Menu> getAllMenuDate(LocalDate localDate) {
         TimeZone.setDefault(TimeZone.getTimeZone("Eupope/Moscow"));
-       return jdbcTemplate.query("select * from  menu where datemenu = ?", new Object[]{localDate},new MenuMapper());
-
+        return jdbcTemplate.query("select * from  menu where datemenu = ?", new Object[]{localDate}, new MenuMapper());
 
     }
 
     @Override
-    public void updateMenu(Menu menu, int restID)  {
-        jdbcTemplate.update("update menu set name=?, price=?, datemenu=?  where id_rest =? and id = ?  ",menu.getName(),menu.getPrice()
-                ,menu.getLocalDate(), menu.getId(), restID);
+    public void updateMenu(Menu menu, int restID) {
+        jdbcTemplate.update("update menu set name=?, price=?, datemenu=?  where id_rest =? and id = ?  ", menu.getName(), menu.getPrice()
+                , menu.getLocalDate(), menu.getId(), restID);
 
     }
 }

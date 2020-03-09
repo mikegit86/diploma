@@ -13,26 +13,23 @@ import java.util.List;
 @RestController
 @RequestMapping(value = AdminVoteController.URL)
 public class AdminVoteController {
-
-     static final String URL = "/admin/vote";
-
+    static final String URL = "/admin/vote";
     @Autowired
     VoteService voteService;
 
     @GetMapping(value = "/today/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Vote> getAllToday (){
-        return  voteService.getAllByLocalDate(LocalDate.now());
+    public List<Vote> getAllToday() {
+        return voteService.getAllByLocalDate(LocalDate.now());
     }
-    //@DeleteMapping(value ="/{id}" )
 
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void deleteVote(@PathVariable ("id") int id){
+    public void deleteVote(@PathVariable("id") int id) {
         voteService.delete(id);
-
     }
-    @GetMapping(value = "/get/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public Vote getVoteId(@PathVariable("id") int id){
+
+    @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Vote getVoteId(@PathVariable("id") int id) {
         return voteService.getById(id).get();
     }
 

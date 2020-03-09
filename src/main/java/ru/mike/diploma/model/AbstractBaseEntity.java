@@ -7,8 +7,8 @@ import java.util.Objects;
 @Access(AccessType.FIELD)
 public abstract class AbstractBaseEntity {
     public static final int START_SEQ = 1000;
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Integer id;
 
     public AbstractBaseEntity(Integer id) {

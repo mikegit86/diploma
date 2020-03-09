@@ -26,6 +26,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     MenuRepository menuRepository;
     @Autowired
     VoteService voteService;
+
     @Override
     public Optional<Restaurant> getRestaurantbyID(int restID) {
         return restaurantRepository.findById(restID);
@@ -34,19 +35,16 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public void delete(int restID) {
         restaurantRepository.deleteById(restID);
-
     }
 
     @Override
     public Restaurant addRest(Restaurant restaurant) {
-       return restaurantRepository.save(restaurant);
-
+        return restaurantRepository.save(restaurant);
     }
 
     @Override
     public void updateRest(Restaurant restaurant) {
         restaurantRepository.save(restaurant);
-
     }
 
     @Override
@@ -54,30 +52,29 @@ public class RestaurantServiceImpl implements RestaurantService {
         return restaurantRepository.findAll();
     }
 
-   @Override
+    @Override
     public Restaurant getRestaurantwithTodayMenu(int restID) {
-   List<Menu>  menu =    menuRepository.getMenuByLocalDateAndRestaurantId(LocalDate.now(),restID);
-       LOG.info("menu={}", menu);
-      Restaurant restaurant=  (Restaurant) getRestaurantbyID(restID).get();
-      restaurant.setMenuList(menu);
-
+        List<Menu> menu = menuRepository.getMenuByLocalDateAndRestaurantId(LocalDate.now(), restID);
+        LOG.info("menu={}", menu);
+        Restaurant restaurant = (Restaurant) getRestaurantbyID(restID).get();
+        restaurant.setMenuList(menu);
         return restaurant;
     }
 
     @Override
     public List<Restaurant> getAllwithTodayMenu(LocalDate localDate) {
         List<Restaurant> allRest = getAllRestaurant();
-        for (Restaurant rest:allRest) {
+        for (Restaurant rest : allRest) {
             LOG.info("rest={}", rest);
-            List<Menu>  menu=  menuRepository.getMenuByLocalDateAndRestaurantId(LocalDate.now(),rest.getId());
-            List<Vote> votes = voteService.getAllByRestaurantIdAndLocalDate(rest.getId(),LocalDate.now());
+            List<Menu> menu = menuRepository.getMenuByLocalDateAndRestaurantId(LocalDate.now(), rest.getId());
+            List<Vote> votes = voteService.getAllByRestaurantIdAndLocalDate(rest.getId(), LocalDate.now());
             LOG.info("menu={}", menu);
             rest.setMenuList(menu);
             rest.setVotes(votes);
-            
+
         }
-List<Restaurant> restTodayMenu = allRest.stream().filter(x->!x.getMenuList().isEmpty()).collect(Collectors.toList());
-        LOG.info("size={}",restTodayMenu.size());
+        List<Restaurant> restTodayMenu = allRest.stream().filter(x -> !x.getMenuList().isEmpty()).collect(Collectors.toList());
+        LOG.info("size={}", restTodayMenu.size());
         return restTodayMenu;
     }
 }

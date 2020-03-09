@@ -9,16 +9,18 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
+
 @Entity
-@Table(name="restaurant")
+@Table(name = "restaurant")
 
 public class Restaurant extends AbstractNamedEntity {
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
-    @JsonManagedReference
- private List<Menu> menuList;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
- private List<Vote> votes;
+    @JsonManagedReference
+    private List<Menu> menuList;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    private List<Vote> votes;
 
     public List<Menu> getMenuList() {
         return menuList;
@@ -43,11 +45,13 @@ public class Restaurant extends AbstractNamedEntity {
 
     public Restaurant() {
     }
+
     public Restaurant(String name) {
-        super(name,null);
+        super(name, null);
     }
-    public Restaurant(int id,String name) {
-        super(name,id);
+
+    public Restaurant(int id, String name) {
+        super(name, id);
     }
 
     public Restaurant(String name, Integer id) {
@@ -62,7 +66,7 @@ public class Restaurant extends AbstractNamedEntity {
 
     @Override
     public String toString() {
-        return "Restaurant{" + menuList+votes+
+        return "Restaurant{" + menuList + votes +
 
 
                 ", name='" + name + '\'' +

@@ -16,26 +16,30 @@ import java.util.Optional;
 @Transactional
 public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
-  private   UserRepository userRepository;
-  public  User add(User user){
-      return   userRepository.save(user);
+    private UserRepository userRepository;
+
+    public User add(User user) {
+        return userRepository.save(user);
     }
-  public   void delete(int userID){
+
+    public void delete(int userID) {
         userRepository.deleteById(userID);
     }
-  public Optional<User>  getbyID(int userID){
-      return   userRepository.findById(userID);
+
+    public Optional<User> getbyID(int userID) {
+        return userRepository.findById(userID);
     }
-   public User getByEmail( String email){
+
+    public User getByEmail(String email) {
         return userRepository.getByEmail(email);
     }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-      User user = userRepository.getByEmail(email.toLowerCase());
-      if(user == null){
-          throw new UsernameNotFoundException(email+"not found");
-      }
+        User user = userRepository.getByEmail(email.toLowerCase());
+        if (user == null) {
+            throw new UsernameNotFoundException(email + "not found");
+        }
         return new AuthorizedUser(user);
     }
 }

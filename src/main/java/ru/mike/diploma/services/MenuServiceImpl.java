@@ -10,32 +10,36 @@ import ru.mike.diploma.persistence.repository.RestaurantRepository;
 
 import java.time.LocalDate;
 import java.util.List;
+
 @Service
 @Transactional
 public class MenuServiceImpl implements MenuService {
     @Autowired
-   private MenuRepository menuRepositoryJPA;
+    private MenuRepository menuRepositoryJPA;
     @Autowired
     private RestaurantRepository restaurantRepositoryJPA;
 
-  public  Menu addMenu(Menu menu,int rest_id){
-      Restaurant rest = restaurantRepositoryJPA.findById(rest_id).get();
-      menu.setRestaurant(rest);
+    public Menu addMenu(Menu menu, int rest_id) {
+        Restaurant rest = restaurantRepositoryJPA.findById(rest_id).get();
+        menu.setRestaurant(rest);
+        menuRepositoryJPA.save(menu);
+        return menu;
+    }
 
-      menuRepositoryJPA.save(menu);
-      return menu;
+    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) {
+        return menuRepositoryJPA.getMenuByLocalDateAndRestaurantId(localDate, restID);
     }
-   public List<Menu> getAllMenuDateandRestID (LocalDate localDate, int restID){
-       return menuRepositoryJPA.getMenuByLocalDateAndRestaurantId(localDate,restID);
-    }
-   public Menu getMenu (int menuID, int restID){
 
-      return    menuRepositoryJPA.getMenuByIdAndRestaurantId(menuID,restID);
+    public Menu getMenu(int menuID, int restID) {
+
+        return menuRepositoryJPA.getMenuByIdAndRestaurantId(menuID, restID);
     }
-   public void deleteMenu(int menuID,int restID){
-        menuRepositoryJPA.deleteByIdAndAndRestaurantId(menuID,restID);
+
+    public void deleteMenu(int menuID, int restID) {
+        menuRepositoryJPA.deleteByIdAndAndRestaurantId(menuID, restID);
     }
-   public List<Menu> getAllMenu ( int restID){
+
+    public List<Menu> getAllMenu(int restID) {
         return menuRepositoryJPA.getAllMenuByRestaurantId(restID);
     }
 }

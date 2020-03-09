@@ -24,47 +24,38 @@ public class MenuController {
     MenuService menuService;
 
     @GetMapping(value = "/{menuId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Menu get(@PathVariable(name = "menuId") int menuId,@PathVariable (name = "restId") int restId) {
+    public Menu get(@PathVariable(name = "menuId") int menuId, @PathVariable(name = "restId") int restId) {
         log.info("menuId = {}", menuId);
 
-        return menuService.getMenu(menuId,restId);
+        return menuService.getMenu(menuId, restId);
     }
 
     @GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
-    //@RequestMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Menu> getAllDate(@PathVariable (name = "restId") int restId) {
-        // log.info("Request to: " + MENU_URL);
+    public List<Menu> getAllDate(@PathVariable(name = "restId") int restId) {
         return menuService.getAllMenu(restId);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Menu> create(@PathVariable(name = "restId") int restId, @RequestBody Menu menu) {
-     Menu creatMenu =   menuService.addMenu(menu, restId);
-       // Menu creatMenu = menuService.getMenu(menu.getId());
+        Menu creatMenu = menuService.addMenu(menu, restId);
         URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{menuId}")
                 .buildAndExpand(creatMenu.getId()).toUri();
-
         return ResponseEntity.created(uriofNewResource).body(creatMenu);
-
-
-    }
-    @DeleteMapping (value = "/delete/{id}")
-    public void delete(@PathVariable ("id") int id, @PathVariable ("restId") int restId){
-        menuService.deleteMenu(id,restId);
     }
 
-    @PutMapping(value = "/update",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/delete/{id}")
+    public void delete(@PathVariable("id") int id, @PathVariable("restId") int restId) {
+        menuService.deleteMenu(id, restId);
+    }
+
+    @PutMapping(value = "/update", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Menu> update(@PathVariable(name = "restId") int restId, @RequestBody Menu menu) {
-        Menu creatMenu =   menuService.addMenu(menu, restId);
-        // Menu creatMenu = menuService.getMenu(menu.getId());
+        Menu creatMenu = menuService.addMenu(menu, restId);
         URI uriofNewResource = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{menuId}")
                 .buildAndExpand(creatMenu.getId()).toUri();
-
         return ResponseEntity.created(uriofNewResource).body(creatMenu);
-
-
     }
 
 }

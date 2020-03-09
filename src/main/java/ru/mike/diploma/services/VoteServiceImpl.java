@@ -12,6 +12,7 @@ import ru.mike.diploma.persistence.repository.VoteRepository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
 @Service
 @Transactional
 public class VoteServiceImpl implements VoteService {
@@ -23,41 +24,31 @@ public class VoteServiceImpl implements VoteService {
     RestaurantService restaurantRepository;
     @Autowired
     VoteRepository voteRepository;
+
     @Override
     public Optional<Vote> getById(int voteID) {
         return voteRepository.getById(voteID);
     }
 
+    @Override
+    public List<Vote> getAllByRestaurantIdAndLocalDate(int restId, LocalDate localDate) {
+        return voteRepository.getAllByRestaurantIdAndLocalDate(restId, localDate);
+    }
 
-@Override
-public List<Vote> getAllByRestaurantIdAndLocalDate(int restId, LocalDate localDate) {
-    return voteRepository.getAllByRestaurantIdAndLocalDate(restId,localDate);
-}
+    @Override
+    public Vote getAllByUserIdAndLocalDate(int userID, LocalDate localDate) {
+        return voteRepository.getAllByUserIdAndLocalDate(userID, localDate);
+    }
 
+    @Override
+    public List<Vote> getAllByLocalDate(LocalDate localDate) {
 
-/*    @Override
-    public List<Vote> getAllByUserIdAndDate(int userID, LocalDate localDate) {
-        return voteRepository.getAllByUserIdAndDate(userID,localDate);
-    }*/
-@Override
-public Vote getAllByUserIdAndLocalDate(int userID, LocalDate localDate) {
-    return voteRepository.getAllByUserIdAndLocalDate(userID,localDate);
-}
-
-/*    @Override
-    public List<Vote> getAllByDate(LocalDate localDate) {
-        return voteRepository.getAllByDate(localDate);
-    }*/
-@Override
-public List<Vote> getAllByLocalDate(LocalDate localDate) {
-
-    return voteRepository.getAllByLocalDate(localDate);
-}
+        return voteRepository.getAllByLocalDate(localDate);
+    }
 
     @Override
     public Vote save(Vote vote) {
-      return   voteRepository.save(vote);
-
+        return voteRepository.save(vote);
     }
 
     @Override
@@ -67,8 +58,8 @@ public List<Vote> getAllByLocalDate(LocalDate localDate) {
 
     @Override
     public Vote saveOrUpdate(Vote vote, int restId, int userId) {
-    vote.setRestaurant(restaurantRepository.getRestaurantbyID(restId).get());
-    vote.setUser(userRepository.getbyID(userId).get());
+        vote.setRestaurant(restaurantRepository.getRestaurantbyID(restId).get());
+        vote.setUser(userRepository.getbyID(userId).get());
         return voteRepository.save(vote);
     }
 

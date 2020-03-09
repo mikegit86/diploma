@@ -16,14 +16,8 @@ public class RestaurantServiceTest extends AbstractServiceTest {
     RestaurantService restaurantService;
 
     @Test
-   public void getRestaurantbyID(){
-         Restaurant rest = restaurantService.getRestaurantbyID(1).get();
-        assertThat(rest).isEqualToIgnoringGivenFields(MACD,"votes","menuList");
-
-       // Assert.assertEquals(MACD,rest);
-
-
-
+    public void getRestaurantbyID() {
+        Restaurant rest = restaurantService.getRestaurantbyID(1).get();
+        assertThat(rest).isEqualToIgnoringGivenFields(MACD, "votes", "menuList");
     }
-
 }

@@ -15,40 +15,39 @@ import java.net.URI;
 @RestController
 @RequestMapping(AdminUserController.URL)
 public class AdminUserController {
-    static final  String URL = "/admin/user";
+    static final String URL = "/admin/user";
     final static Logger LOG = LoggerFactory.getLogger(AdminUserController.class);
     @Autowired
     UserService userService;
+
     @GetMapping(value = "/get/{Id}")
-    public User getUser(@PathVariable ("Id") int Id){
+    public User getUser(@PathVariable("Id") int Id) {
         LOG.info("id user ={}", Id);
-       return userService.getbyID(Id).get();
+        return userService.getbyID(Id).get();
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User>  add (@RequestBody User user){
-        User addUser =    userService.add(user);
-
-        LOG.info("User {}",addUser);
+    public ResponseEntity<User> add(@RequestBody User user) {
+        User addUser = userService.add(user);
+        LOG.info("User {}", addUser);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(URL + "/{id}")
                 .buildAndExpand(addUser.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(addUser);
     }
 
-
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User>  update (@RequestBody User user){
-        User updateUser =    userService.add(user);
-
-        LOG.info("User {}",updateUser);
+    public ResponseEntity<User> update(@RequestBody User user) {
+        User updateUser = userService.add(user);
+        LOG.info("User {}", updateUser);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(URL + "/{id}")
                 .buildAndExpand(updateUser.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(updateUser);
     }
+
     @DeleteMapping("/delete/{id}")
-    public void delete(@PathVariable ("id") int id){
+    public void delete(@PathVariable("id") int id) {
         userService.delete(id);
     }
 

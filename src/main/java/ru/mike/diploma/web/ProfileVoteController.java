@@ -22,6 +22,7 @@ import java.net.URI;
 import java.time.Clock;
 import java.time.LocalDate;
 import java.time.LocalTime;
+
 @RestController
 public class ProfileVoteController {
     private Clock clock;
@@ -29,39 +30,32 @@ public class ProfileVoteController {
     RestaurantService restaurantService;
     @Autowired
     VoteService voteService;
-    private static final Logger  log= LoggerFactory.getLogger(ProfileVoteController.class);
+    private static final Logger log = LoggerFactory.getLogger(ProfileVoteController.class);
     static final String POST_URL = "/api/profile/restaurants/{restaurantId}/votes";
     static final String GET_URL = "/api/votes";
 
-
-    @GetMapping(value = GET_URL, produces =MediaType.APPLICATION_JSON_VALUE )
-    public Vote getVote(@AuthenticationPrincipal AuthorizedUser authorizedUser){
-
+    @GetMapping(value = GET_URL, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Vote getVote(@AuthenticationPrincipal AuthorizedUser authorizedUser) {
         log.info("user {} ", authorizedUser.getUserTo());
-        return voteService.getAllByUserIdAndLocalDate(authorizedUser.getId(),LocalDate.now());
-
+        return voteService.getAllByUserIdAndLocalDate(authorizedUser.getId(), LocalDate.now());
     }
 
-
-
     @PostMapping(value = POST_URL, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<Vote> createOrUpdate(@PathVariable ("restaurantId") int restaurantId, @AuthenticationPrincipal AuthorizedUser authorizedUser){
-        Vote vote = voteService.getAllByUserIdAndLocalDate(authorizedUser.getId(),LocalDate.now());
-        if(vote==null) {
+    public ResponseEntity<Vote> createOrUpdate(@PathVariable("restaurantId") int restaurantId, @AuthenticationPrincipal AuthorizedUser authorizedUser) {
+        Vote vote = voteService.getAllByUserIdAndLocalDate(authorizedUser.getId(), LocalDate.now());
+        if (vote == null) {
             Vote voteNew = new Vote(LocalDate.now(), restaurantService.getRestaurantbyID(restaurantId).get(), authorizedUser.getUserTo());
             voteService.save(voteNew);
             URI uriOfNew = ServletUriComponentsBuilder.fromCurrentRequest()
-.path("/{restaurantId}")
+                    .path("/{restaurantId}")
                     .buildAndExpand(vote.getId()).toUri();
             return ResponseEntity.created(uriOfNew).body(voteNew);
-        }
-        else {
+        } else {
             log.info("update vote {} restauratnID {} user {}", vote, restaurantId, authorizedUser.getUserTo());
-            LocalTime localTime  = LocalTime.now();
-          TimeUtil.chekVoteTime(localTime);
-            voteService.saveOrUpdate(vote,restaurantId,authorizedUser.getId());
+            LocalTime localTime = LocalTime.now();
+            TimeUtil.chekVoteTime(localTime);
+            voteService.saveOrUpdate(vote, restaurantId, authorizedUser.getId());
             return ResponseEntity.ok().build();
-
 
         }
     }

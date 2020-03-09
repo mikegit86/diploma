@@ -7,9 +7,11 @@ import java.util.Optional;
 public interface UserService {
 
     User add(User user);
+
     void delete(int userID);
 
     Optional<User> getbyID(int userID);
-    User getByEmail( String email);
+
+    User getByEmail(String email);
 
 }

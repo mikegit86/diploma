@@ -7,8 +7,12 @@ import java.util.List;
 
 public interface MenuService {
     Menu addMenu(Menu menu, int rest_id);
-    List<Menu> getAllMenuDateandRestID (LocalDate localDate, int restID);
-    List<Menu> getAllMenu ( int restID);
-    Menu getMenu (int menuID, int restID);
+
+    List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID);
+
+    List<Menu> getAllMenu(int restID);
+
+    Menu getMenu(int menuID, int restID);
+
     void deleteMenu(int menuID, int restID);
 }

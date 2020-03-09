@@ -15,9 +15,7 @@ public class MenuMapper implements RowMapper {
         Integer id = resultSet.getInt("id");
         Integer price = resultSet.getInt("price");
         Date date = resultSet.getDate("datemenu");
-        Menu menu = new Menu(name, id,price,  date.toLocalDate());
+        Menu menu = new Menu(name, id, price, date.toLocalDate());
         return menu;
-
-
     }
 }

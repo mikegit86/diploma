@@ -17,20 +17,18 @@ import java.util.List;
 @Component
 public class MenuJPAHibernateImpl implements MenuJPA {
     @Autowired
-   private SessionFactory sessionFactory;
-
+    private SessionFactory sessionFactory;
     final static Logger LOG = LoggerFactory.getLogger(MenuJPAImplJDBC.class);
 
-  private Session currentSession(){
+    private Session currentSession() {
         return sessionFactory.openSession();
     }
 
     @Override
-    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID)  {
-
-      Query<Menu>  query= currentSession().createQuery("from Menu where localDate =:localDate and id_rest =:restID", Menu.class);
-      query.setParameter("restID",restID);
-      query.setParameter("localDate",localDate);
+    public List<Menu> getAllMenuDateandRestID(LocalDate localDate, int restID) {
+        Query<Menu> query = currentSession().createQuery("from Menu where localDate =:localDate and id_rest =:restID", Menu.class);
+        query.setParameter("restID", restID);
+        query.setParameter("localDate", localDate);
         LOG.info("query={}", query.getResultList());
 
         return query.getResultList();
@@ -39,52 +37,33 @@ public class MenuJPAHibernateImpl implements MenuJPA {
     @Override
 
     public Menu getMenu(int menuID) {
-      /*  Query<Menu>  query =  currentSession().createQuery("from Menu where id =:menuID", Menu.class);
-        query.setParameter("menuID",menuID);
-
-        return query.getSingleResult();*/
-
-        Query<Menu>  query =  currentSession().createQuery("from Menu where id =:menuID", Menu.class);
-        query.setParameter("menuID",menuID);
-
+        Query<Menu> query = currentSession().createQuery("from Menu where id =:menuID", Menu.class);
+        query.setParameter("menuID", menuID);
         return query.getSingleResult();
     }
 
     @Override
-
-    public void deleteMenu(int menuID)  {
+    public void deleteMenu(int menuID) {
         Menu menu = getMenu(menuID);
+        currentSession().delete(menu);
+    }
 
-
-
-
-
-   currentSession().delete(menu);
-        //currentSession().remove(menuID);
+    @Override
+    public void addMenu(Menu menu) {
 
     }
 
     @Override
-    public void addMenu(Menu menu)  {
-
-    }
-
-    @Override
-    public List<Menu> getAllMenuDate(LocalDate localDate)  {
-       Query<Menu>  query = currentSession().createQuery("from Menu where localDate =:localDate",Menu.class);
-        query.setParameter("localDate",localDate);
-
-
+    public List<Menu> getAllMenuDate(LocalDate localDate) {
+        Query<Menu> query = currentSession().createQuery("from Menu where localDate =:localDate", Menu.class);
+        query.setParameter("localDate", localDate);
         return query.getResultList();
     }
 
     @Override
-
-    public void updateMenu(Menu menu, int restID)  {
-         menu.getRestaurant().setId(restID);
-
-       currentSession().update(menu);
-
+    public void updateMenu(Menu menu, int restID) {
+        menu.getRestaurant().setId(restID);
+        currentSession().update(menu);
         LOG.info("update={}", menu);
         LOG.info("restid={}", menu.getRestaurant().getId());
     }

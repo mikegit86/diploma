@@ -10,38 +10,38 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+
 @Entity
-@Table(name="menu")
+@Table(name = "menu")
 
-public class Menu extends AbstractNamedEntity  {
-@Column(name = "price")
-   private long price;
+public class Menu extends AbstractNamedEntity {
+    @Column(name = "price")
+    private long price;
+
     @ManyToOne(fetch = FetchType.LAZY)
- //   @ManyToOne(fetch = FetchType.LAZY,cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-@JoinColumn(name="id_rest")
-
-  // @OnDelete(action = OnDeleteAction.CASCADE)
-  //  @JsonIgnore
+    @JoinColumn(name = "id_rest")
     @JsonBackReference
-   private  Restaurant restaurant;
+    private Restaurant restaurant;
+
     @Column(name = "datemenu")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-   private LocalDate localDate;
+    private LocalDate localDate;
 
     public Menu(long price, Restaurant restaurant, LocalDate localDate) {
         this.price = price;
         this.restaurant = restaurant;
         this.localDate = localDate;
     }
-    public Menu(String name,long price,  LocalDate localDate) {
+
+    public Menu(String name, long price, LocalDate localDate) {
         this.name = name;
         this.price = price;
 
         this.localDate = localDate;
     }
+
     public Menu(String name, long price, Restaurant restaurant, LocalDate localDate) {
-        super(name,null);
+        super(name, null);
         this.price = price;
         this.restaurant = restaurant;
         this.localDate = localDate;
@@ -54,7 +54,8 @@ public class Menu extends AbstractNamedEntity  {
         this.restaurant = restaurant;
         this.localDate = localDate;
     }
-    public Menu(String name, Integer id, long price,  LocalDate localDate) {
+
+    public Menu(String name, Integer id, long price, LocalDate localDate) {
         super(name, id);
         this.price = price;
         this.localDate = localDate;

@@ -10,14 +10,15 @@ public interface VoteService {
 
     Optional<Vote> getById(int voteID);
 
-   // List<Vote> getAllByRestaurantIdAndDate(int restID, LocalDate localDate);
-   List<Vote> getAllByRestaurantIdAndLocalDate(int restId,LocalDate localDate);
- //   List<Vote> getAllByRestaurantIdToday(int restID, LocalDate localDate);
-   // List<Vote> getAllByUserIdAndDate(int userID, LocalDate localDate);
-   Vote getAllByUserIdAndLocalDate(int userID, LocalDate localDate);
-   // List<Vote> getAllByDate(LocalDate localDate);
-   List<Vote> getAllByLocalDate(LocalDate localDate);
-     Vote save(Vote vote);
+    List<Vote> getAllByRestaurantIdAndLocalDate(int restId, LocalDate localDate);
+
+    Vote getAllByUserIdAndLocalDate(int userID, LocalDate localDate);
+
+    List<Vote> getAllByLocalDate(LocalDate localDate);
+
+    Vote save(Vote vote);
+
     void delete(int voteId);
+
     Vote saveOrUpdate(Vote vote, int restId, int userId);
 }

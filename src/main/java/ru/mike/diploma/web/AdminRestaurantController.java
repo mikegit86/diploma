@@ -26,47 +26,40 @@ public class AdminRestaurantController {
     final static Logger LOG = LoggerFactory.getLogger(AdminRestaurantController.class);
     @Autowired
     RestaurantService restaurantService;
-
-    static final  String URL = "/admin/restaurant";
+    static final String URL = "/admin/restaurant";
 
     @GetMapping(value = "/get/{id}")
-    public Restaurant getRestId(@PathVariable ("id") int id){
-       return restaurantService.getRestaurantbyID(id).get();
-
+    public Restaurant getRestId(@PathVariable("id") int id) {
+        return restaurantService.getRestaurantbyID(id).get();
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Restaurant> add(@RequestBody Restaurant restaurant ){
-
-
-     Restaurant restaurantNew =   restaurantService.addRest(restaurant);
-
+    public ResponseEntity<Restaurant> add(@RequestBody Restaurant restaurant) {
+        Restaurant restaurantNew = restaurantService.addRest(restaurant);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(URL + "/{id}")
                 .buildAndExpand(restaurantNew.getId()).toUri();
         return ResponseEntity.created(uriOfNewResource).body(restaurantNew);
-
     }
-    @PutMapping(value = "/update/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void update(@PathVariable("id") int id, @RequestBody Restaurant restaurant){
-        //Restaurant restaurant = restaurantService.getRestaurantbyID(id).get();
+
+    @PutMapping(value = "/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void update(@PathVariable("id") int id, @RequestBody Restaurant restaurant) {
 
         restaurantService.updateRest(restaurant);
     }
-    @DeleteMapping (value = "/delete/{id}")
-    public void delete(@PathVariable ("id" ) int id){
+
+    @DeleteMapping(value = "/delete/{id}")
+    public void delete(@PathVariable("id") int id) {
         restaurantService.delete(id);
     }
 
-    @GetMapping(value = "/getAllTodayMenu",produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Restaurant> getToday(){
+    @GetMapping(value = "/getAllTodayMenu", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Restaurant> getToday() {
         LOG.info("getAllTodayMenu");
-        List<Restaurant> restWithTodayMenu  = restaurantService.getAllwithTodayMenu(LocalDate.now());
-        LOG.info("size={}",restWithTodayMenu.size());
+        List<Restaurant> restWithTodayMenu = restaurantService.getAllwithTodayMenu(LocalDate.now());
+        LOG.info("size={}", restWithTodayMenu.size());
+        return restWithTodayMenu;
 
-
-     return    restWithTodayMenu;
-    /*    return restaurantListTest;*/
     }
 
 
